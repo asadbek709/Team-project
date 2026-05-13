@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Archivo", sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+
+.left {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(#FF7B3D, #5C260C);
+    position: relative;
+    padding: 60px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.left>img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+}
+
+.left .modescontiner {
+    display: flex;
+    /* position: relative; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.left .modes {
+    width: 500px;
+    border-radius: 10px;
+    background-color: #FFF7F340;
+    border: 1px solid white;
+    z-index: 2;
+    position: relative;
+    padding: 40px;
+}
+
+
+.left .modes h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.left .modes .round img {
+    width: 49.73px;
+    margin-bottom: 80px;
+    margin-left: 390px;
+    position: absolute;
+    top: 145px;
+}
+
+
+.left .modes > img {
+    width: 100%;
+    margin: 15px 0 50px 0;
+}
+
+.left .modes p {
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+}
+
+.left .icon2 img {
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    z-index: 7;
+}
+
+.registratsiya {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    /* position: relative; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+}
+
+.registratsiya .images {
+    display: flex;
+    /* position: relative; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.registratsiya img {
+    position: absolute;
+    /* top: 95px; */
+}
+
+
+.registratsiya .login_box {
+    width: 500px;
+    /* height: 500px; */
+    /* border: 2px solid red; */
+    margin-top: -25px;
+}
+
+
+.registratsiya .login_box h1 {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: #111827;
+}
+
+.registratsiya .login_box p {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    line-height: 34px;
+    color: #6B7280;
+}
+
+
+
+
+
+.registratsiya .login_box .box {
+    position: relative;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 4px; */
+    padding: 10px 0px;
+    margin-left: 50px;
+    /* border: 1px solid #E5E7EB ; */
+}
+
+.registratsiya .login_box .box label {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0px 0px 5px 0px;
+}
+
+.box input {
+    width: 100%;
+    height: 38px;
+    padding: 12px 45px 12px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #E5E7EB;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #FF8A4C;
+    box-shadow: 0 0 2px rgba(255, 138, 76, 0.5);
+}
+
+.registratsiya .login_box .inpbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.box img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    width: 20px;
+    line-height: -10px;
+    cursor: pointer;
+}
+
+.chekdiv {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    margin-left: 50px;
+    color: #111827;
+}
+
+.chekdiv a {
+    color: #F26522;
+}
+
+.chekdiv input {
+    width: 15px;
+    height: 15px;
+    accent-color: #F26522;
+}
+
+.login_box .sign_btn {
+    width: 400px;
+    height: 38px;
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(#FF6F28, #FF5325);
+    border: none;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.login_box .sign_btn:active {
+    background: linear-gradient(#FF5325, #FF6F28);
+}
+
+.login_box h5 {
+    font-size: 14px;
+    color: #111827;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login_box h5 a {
+    color: #F26522;
+}
+
+.line {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.line hr {
+    flex: 1;
+    height: 1px;
+    border: none;
+    background: #ccc;
+}
+
+.btn_box {
+    display: flex;
+    gap: 15px;
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+.btn_box button {
+    width: 110px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_box button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.btn_box .feesbook {
+    background-color: #1B84FF;
+}
+
+.btn_box .google {
+    background-color: white;
+    border: 1px solid #E5E7EB;
+}
+
+.btn_box .apple {
+    background-color: #212529;
+}
