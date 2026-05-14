@@ -178,6 +178,9 @@ body {
     justify-content: space-between;
     gap: 10px;
 }
+.box form span a{
+    color: #f5661e;
+}
 
 .box form .wrap .con {
     display: flex;
