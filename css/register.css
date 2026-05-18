@@ -111,6 +111,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
+
 }
 
 .registratsiya img {
@@ -132,6 +134,7 @@ body {
     font-size: 24px;
     text-align: center;
     color: #111827;
+    /* margin-top: -50px; */
 }
 
 .registratsiya .login_box p {
@@ -140,6 +143,7 @@ body {
     text-align: center;
     line-height: 34px;
     color: #6B7280;
+    margin-top: -1px;
 }
 
 
@@ -156,12 +160,37 @@ body {
     margin-left: 50px;
     /* border: 1px solid #E5E7EB ; */
 }
+.registratsiya .login_box .box-hp {
+    position: relative;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 4px; */
+    padding: 10px 0px;
+    margin-left: 50px;
+    /* border: 1px solid #E5E7EB ; */
+}
 
 .registratsiya .login_box .box label {
     font-weight: 500;
     font-size: 14px;
     padding: 0px 0px 5px 0px;
 }
+
+.registratsiya .login_box .box-hp label {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0px 0px 5px 0px;
+}
+.box-hp input {
+    width: 100%;
+    height: 38px;
+    padding: 12px 45px 12px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #E5E7EB;
+}
+
 
 .box input {
     width: 100%;
@@ -181,6 +210,19 @@ input:focus {
 .registratsiya .login_box .inpbox {
     display: flex;
     flex-direction: column;
+}
+
+.box-hp img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    width: 20px;
+    line-height: -10px;
+    cursor: pointer;
+}
+.registratsiya .login_box .box-hp img:last-child{
+    visibility: hidden;
 }
 
 .box img {
@@ -209,6 +251,7 @@ input:focus {
     width: 15px;
     height: 15px;
     accent-color: #F26522;
+    cursor: pointer;
 }
 
 .login_box .sign_btn {
@@ -220,6 +263,7 @@ input:focus {
     border: none;
     margin-left: 50px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .login_box .sign_btn:active {
@@ -244,7 +288,7 @@ input:focus {
     align-items: center;
     margin-left: 50px;
     gap: 10px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .line hr {
@@ -258,7 +302,7 @@ input:focus {
     display: flex;
     gap: 15px;
     margin-left: 70px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .btn_box button {
@@ -270,6 +314,8 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+
 }
 
 .btn_box button a {
@@ -296,3 +342,7 @@ input:focus {
 .registratsiya p{
     margin-top: 30px;
 }
+
+/* @media only screen and (max-widht:440px){
+
+} */
