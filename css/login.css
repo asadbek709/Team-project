@@ -103,11 +103,6 @@ body {
     color: #6B7280;
 }
 
-.box form #copy{
-    margin-top: 60px;
-}
-
-
 .box form .inpBox {
     margin-top: 16px;
     display: flex;
@@ -147,6 +142,7 @@ body {
 }
 
 .box form button {
+    margin-bottom: 20px;
     margin-top: 16px;
     width: 100%;
     font-size: 14px;
@@ -164,22 +160,23 @@ body {
 }
 
 
-.box form span {
-    margin-top: 16px;
+.box form .don {
+    margin-top: 26px;
     font-size: 12px;
     font-weight: 400;
     color: #111827;
 }
 
+.box form .don a {
+    color: #f5661e;
+}
+
 .box form .wrap {
-    margin-top: 16px;
+    margin-top: 26px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-}
-.box form span a{
-    color: #f5661e;
 }
 
 .box form .wrap .con {

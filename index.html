@@ -36,16 +36,16 @@
             <p>Please enter your details to sign in</p>
 
             <div class="inpBox">
-                <img class="user" src="./assets/icons/user.svg" alt="" width="16px">
                 <label>Username</label>
-                <input type="text">
+                <input type="text" name="text">
+                <img class="user" src="./assets/icons/user.svg" alt="" width="16px">
             </div>
 
             <div class="inpBox">
+                <label>Password</label>
+                <input class="password_inp" type="password" name="password">
                 <img class="eye" src="./assets/icons/eye.svg" alt="" width="16px">
                 <img class="eye-slash" src="./assets/icons/eye-slash.svg" alt="" width="16px">
-                <label>Password</label>
-                <input class="password_inp" type="password">
             </div>
 
             <div class="checkBox">
@@ -55,7 +55,7 @@
 
             <button>Sing In</button>
 
-            <span>Don’t have an account? <a href="./register.html">Create Account</a> </span>
+            <span class="don">Don’t have an account? <a href="./register.html">Create Account</a> </span>
 
 
             <div class="wrap">
@@ -69,11 +69,12 @@
                     <img src="./assets/icons/Apple logo.svg" alt="">
                 </div>
             </div>
-
         </form>
 
-        <p id="copy">Copyright @2026 - SmartHR</p>
+        <p>Copyright @2026 - SmartHR</p>
+        
     </div>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>
