@@ -47,11 +47,11 @@ function checked(inp) {
         let isSymbol = arr.some((s) => isNaN(s) && s === s.toUpperCase() && s === s.toLowerCase())
         if (!isRepeat && inp.value.length >= 8 && isUpper && isLower && isNumber && isSymbol) {
             inp.style.cssText = `
-                    border: 1px solid #1f883d;
+                    border: 2px solid #1f883d;
                 `
         } else {
             inp.style.cssText = `
-                    border: 1px solid #cf222e;
+                    border: 2px solid #cf222e;
                 `
         }
     } else {
