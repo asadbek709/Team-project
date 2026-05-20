@@ -24,7 +24,7 @@ arr.forEach((box) => {
 function checked(inp) {
     let type = inp.getAttribute("name");
 
-    if (type === "text") {
+    if (type === "username") {
         let val = inp.value.trim()
         let len = val.split(" ").length === 1
         let isLower = inp.value.split("").filter((s) => s !== s.toUpperCase() || s !== s.toLowerCase()).every((s) => s === s.toLowerCase())
@@ -83,4 +83,40 @@ eye.addEventListener("click", function () {
   visibility: visable;
   `
     password_inp.type = "password"
+})
+
+const btn = document.querySelector("#btn")
+
+const clearInp = (arr) => {
+    arr.forEach((box) => {
+        let inp = box.children[1];
+        inp.value = "";
+    })
+}
+
+btn.addEventListener("click", function (e) {
+    e.preventDefault()
+    let isGreen = []
+    let allInpValue = {}
+    arr.forEach((box) => {
+        let inp = box.children[1];
+        isGreen.push(inp.getAttribute("style")?.includes("rgb(31, 136, 61)"))
+        allInpValue[inp.name] = inp.value;
+    })
+    let isTruesy = isGreen.every((value) => value);
+    if (isTruesy) {
+        fetch("https://692ad7077615a15ff24dd6b2.mockapi.io/api/v1/register")
+            .then((res) => res.json())
+            .then((res) => {
+                let obj = res.find((obj) => obj.username === allInpValue.username && obj.password === allInpValue.password)
+                if (obj) window.location.href = "dashboard.html"
+                else {
+                    clearInp(arr)
+                    alert("Siz kiritgan ma'lumot topilmadi yoki xali Ro'yxatdan o'tmagansiz.")
+                }
+            })
+    } else {
+        clearInp(arr)
+        alert("Siz xali to'liq qiymat kiritmadingiz.")
+    }
 })
