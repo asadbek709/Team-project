@@ -62,7 +62,7 @@
     <main>
         <div class="titlewrapper">
             <h2>Contacts</h2>
-            <button><img src="./assets/icons/circle-plus.svg" alt="">Add New Contact</button>
+            <button id="add"><img src="./assets/icons/circle-plus.svg" alt="">Add New Contact</button>
         </div>
 
         <div class="contactControl">
@@ -74,38 +74,6 @@
         </div>
 
         <div class="cardWrapper">
-            <div class="card">
-                <div class="avatar">
-                    <input class="check" type="checkbox">
-                    <div class="user">
-                        <img src="./assets/icons/Card Avatar.svg" alt="">
-                        <h5>Darlee Robertson</h5>
-                        <p>Facility Manager</p>
-                    </div>
-                    <img src="./assets/icons/Action.svg" alt="">
-                </div>
-
-                <div class="address">
-                    <p><img src="./assets/icons/mail-forward.svg" alt="">darlee@example.com</p>
-                    <p><img src="./assets/icons/phone.svg" alt="">(163) 2459 315</p>
-                    <p><img src="./assets/icons/map-pin.svg" alt="">Germany</p>
-                </div>
-
-                <hr>
-
-                <div class="icons">
-                    <div class="imags">
-                        <img src="./assets/icons/mail-icon.svg" alt="">
-                        <img src="./assets/icons/phone-call.svg" alt="">
-                        <img src="./assets/icons/message-2.svg" alt="">
-                        <img src="./assets/icons/brand-skype.svg" alt="">
-                        <img src="./assets/icons/brand-facebook.svg" alt="">
-                    </div>
-                    <div class="reyting">
-                        ⭐<p>4.2</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -120,6 +88,52 @@
         <p>2026-2030 &copy; SmartHR.</p>
         <p>Designed & Developed By <span>Dreams</span></p>
     </footer>
+
+    <div class="modal">
+        <div class="titleWrapper">
+            <p>Create a contact</p>
+        </div>
+
+        <div class="form">
+            <div class="box">
+                <label>Full name</label>
+                <input class="fUllName" type="text" placeholder="Ali Valiyev">
+            </div>
+
+            <div class="box">
+                <label>Department</label>
+                <input class="Department" type="text" placeholder="Senior  Manager">
+            </div>
+
+            <div class="box">
+                <label>Phone number</label>
+                <input class="phoneNumber" type="number" placeholder="997770707">
+            </div>
+            <div class="box">
+                <label>Email</label>
+                <input class="email" type="email" placeholder="darlee@example.com">
+            </div>
+            <div class="box">
+                <label>Address</label>
+                <input type="text" placeholder="Germany">
+            </div>
+
+            <div class="box">
+                <label>Image</label>
+                <input class="imageInput" type="file" placeholder="enter your image">
+            </div>
+
+
+            <div class="box">
+                <button id="close">CLose</button>
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="blur"></div>
+
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>

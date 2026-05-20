@@ -74,9 +74,12 @@ main .contactControl select {
 }
 
 main .cardWrapper {
+    height: 60vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+    overflow: hidden;
+    overflow-y: scroll;
 
 }
 
@@ -86,6 +89,12 @@ main .cardWrapper .card {
     background-color: #fff;
     border: 1px solid #E5E7EB;
     border-radius: 5px;
+    transition: all 0.3s;
+}
+
+main .cardWrapper .card:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.09);
 }
 
 main .cardWrapper .card .avatar {
@@ -100,6 +109,7 @@ main .cardWrapper .card .avatar .check {
 }
 
 main .cardWrapper .card .avatar .user img {
+    border-radius: 50%;
     width: 58px;
 }
 
@@ -142,6 +152,7 @@ main .cardWrapper .card .address {
 }
 
 main .cardWrapper .card .address p {
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -178,4 +189,112 @@ main .cardWrapper .card .icons .reyting {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+
+
+.modal {
+    display: none;
+    width: 430px;
+    border-radius: 12px;
+    background-color: white;
+    padding: 24px 28px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.blur {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    
+
+}
+
+.modal .titleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.modal .titleWrapper p {
+    font-size: 20px;
+    font-weight: 300;
+
+}
+
+.modal .titleWrapper img {
+    cursor: pointer;
+}
+
+.modal .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+}
+
+.modal .form .box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.modal .form .box label {
+    font-size: 13px;
+    color: #151515;
+    font-weight: 400;
+}
+
+.modal .form .box input,
+.modal .form .box select {
+    padding: 8px 16px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.modal .form .box input::placeholder {
+    color: #7b7b7f;
+    font-weight: 200;
+}
+
+.modal .form .box:last-child {
+    flex-direction: row;
+    gap: 12px;
+}
+
+.modal .form .box:last-child button {
+    width: 100%;
+    background: blue;
+    padding: 8px 7px;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.modal .form .box:last-child  button:first-child {
+    background-color: white;
+    border: 1px solid #1e5eff;
+    color: #1856f4;
+
 }
