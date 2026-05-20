@@ -6,11 +6,11 @@
 }
 
 body {
-  background: #f5f6fa;
   overflow-x: hidden;
 }
 
 main {
+  background: #f5f6fa;
   padding: 22px;
   overflow-y: auto;
 }
@@ -62,7 +62,6 @@ main {
 
 .wrapper .ten img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -135,4 +134,9 @@ main {
 
 .wrapper .box .view {
   color: #F26522;
+}
+ .dashboard-top .calendar span{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
