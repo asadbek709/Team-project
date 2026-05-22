@@ -8,6 +8,7 @@
 main {
     background-color: #F8F9FA;
     padding: 27px 24px;
+    overflow-y: scroll;
 }
 
 main .titlewrapper {
@@ -74,11 +75,11 @@ main .contactControl select {
 }
 
 main .cardWrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
     gap: 24px;
-    overflow: hidden;
-    overflow-y: auto;
 }
 
 main .cardWrapper .card {
