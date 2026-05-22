@@ -44,11 +44,20 @@ main {
 
 .wrapper {
   display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  grid-template-rows: auto auto;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
+.wrapper .ten {
+  grid-column: 5/6;
+  grid-row: 1/3;
+  height: 286px;
+}
 
+.wrapper .box,
+.wrapper .box2 {
 .ten {
   width: 364px;
   height: 340px;
@@ -147,6 +156,3 @@ main {
   align-items: center;
   gap: 5px;
 }
-
-
-
