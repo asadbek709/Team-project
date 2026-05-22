@@ -74,13 +74,11 @@ main .contactControl select {
 }
 
 main .cardWrapper {
-    height: 60vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     overflow: hidden;
-    overflow-y: scroll;
-
+    overflow-y: auto;
 }
 
 main .cardWrapper .card {

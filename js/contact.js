@@ -33,6 +33,7 @@ const department = document.querySelector(".Department")
 const phoneNumber = document.querySelector(".phoneNumber")
 const email = document.querySelector(".email")
 const imageInput = document.querySelector(".imageInput")
+const address = document.querySelector(".address")
 
 const API = "https://6a0b382921e4456256978f49.mockapi.io/Contact"
 
@@ -50,9 +51,9 @@ function createCard(user) {
 
             <div class="user">
                 <img src="${user.image}" alt="">
-                <h5>${user.fullName}</h5>
+                <h5>${user.full_name}</h5>
                 <p>${user.department}</p>
-            </div>
+            </div>  
 
             <img src="./assets/icons/Action.svg" alt="">
         </div>
@@ -61,17 +62,17 @@ function createCard(user) {
 
             <p>
                 <img src="./assets/icons/mail-forward.svg" alt="">
-                ${user.email}
+                ${user.email.length > 25 ? user.email.slice(0, 26).padEnd(29, "...") : user.email}
             </p>
 
             <p>
                 <img src="./assets/icons/phone.svg" alt="">
-                ${user.phone}
+                +${user.phone}
             </p>
 
             <p>
                 <img src="./assets/icons/map-pin.svg" alt="">
-                Uzbekistan
+                ${user.address}
             </p>
 
         </div>
@@ -124,11 +125,12 @@ submit.addEventListener("click", function () {
     reader.onload = function () {
 
         const newUser = {
-            fullName: fullName.value,
+            full_name: fullName.value,
             department: department.value,
             phone: phoneNumber.value,
             email: email.value,
-            image: reader.result
+            image: reader.result,
+            address: address.value
         }
 
         fetch(API, {
