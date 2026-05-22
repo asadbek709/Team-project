@@ -3,6 +3,7 @@ main{
     overflow-x: auto;
     padding:24px;
     background-color:#f5f6fa;
+    font-family: "Archivo", sans-serif;
 }
 
 .wrapper{
