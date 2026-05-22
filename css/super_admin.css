@@ -1,0 +1,311 @@
+main{
+    overflow-y: auto;
+    overflow-x: auto;
+    padding:24px;
+    background-color:#f5f6fa;
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: 40px auto;
+
+    gap:24px;
+}
+
+
+/* top */
+
+.top{
+    grid-column:1 / 3;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:14px;
+    color:#666;
+}
+
+.top_button{
+    width: 112px;
+    height:38px;
+    border:none;
+    border-radius:8px;
+    background:#ff6b00;
+    color:white;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+
+/* left */
+
+.left_card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #ececec;
+    
+}
+
+.cover{
+    height:90px;
+    background:linear-gradient(90deg,#ff8a00,#ffc76a);
+}
+
+.user_info{
+    text-align:center;
+    padding:0 20px 20px;
+    margin-top:-42px;
+}
+
+.avatar{
+    width:84px;
+    height:84px;
+
+    border-radius:50%;
+
+    border:4px solid white;
+}
+
+.user_info h2{
+    margin-top:10px;
+
+    font-size:20px;
+}
+
+.user_info p{
+    margin-top:4px;
+
+    font-size:13px;
+    color:#777;
+}
+
+.job_badge{
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:#ffe5ef;
+    color:#ff4d88;
+
+    font-size:11px;
+}
+
+.info_box{
+    padding:20px;
+
+    border-top:1px solid #f0f0f0;
+}
+
+.title_row{
+    margin-bottom:18px;
+}
+
+.title_row h3{
+    font-size:15px;
+}
+
+.info_item{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:16px;
+}
+
+.info_item span:first-child{
+    color:#888;
+    font-size:13px;
+}
+
+.info_item span:last-child{
+    text-align:right;
+
+    font-size:13px;
+    color:#222;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.socials{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor: pointer;
+}
+
+.socials img{
+    width:30px;
+    height:30px;
+}
+
+.btns{
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.btns button{
+    height:40px;
+
+    border:none;
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.share_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background:#1f1f1f;
+    color:#fff;
+}
+
+
+.delete_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background:#ff6b00;
+    color:#fff;
+}
+
+/* right */
+
+.right_card{
+    background:#fff;
+    border-radius:14px;
+    border:1px solid #ececec;
+    padding:20px;
+
+}
+
+.tabs{
+    display:flex;
+    gap:24px;
+    padding-bottom:14px;
+    border-bottom:1px solid #eee;
+}
+
+.tabs button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    padding-bottom:10px;
+}
+
+.tabs .active{
+    color:#ff6b00;
+    border-bottom:2px solid #ff6b00;
+}
+
+.activity_wrapper{
+    margin-top:24px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+}
+
+.activity_card{
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:16px;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    justify-items: start;
+    gap:14px;
+}
+
+.circle{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+}
+
+.blue{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#25b7ff;
+}
+
+.green{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#1dc85f;
+}
+
+.yellow{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#ffc400;
+}
+
+.blue{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#25b7ff;
+}
+
+.green{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#1dc85f;
+}
+
+.yellow{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#ffc400;
+}
+
+.span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    gap: 5px;
+    width: 91px;
+    height: 22px;
+    border-radius: 5px;
+    background-color: rgba(247, 238, 249, 1);
+    color: rgba(171, 71, 188, 1);
+
+}
