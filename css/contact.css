@@ -82,8 +82,18 @@ main .cardWrapper {
     gap: 24px;
 }
 
+@media (max-width: 1500px) {
+    main .cardWrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
 main .cardWrapper .card {
-    width: 270px;
+    max-width: 270px;
+    min-width: 240px;
+    width: 100%;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #E5E7EB;
@@ -91,7 +101,7 @@ main .cardWrapper .card {
     transition: all 0.3s;
 }
 
-main .cardWrapper .card:hover{
+main .cardWrapper .card:hover {
     cursor: pointer;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.09);
 }
@@ -213,7 +223,7 @@ main .cardWrapper .card .icons .reyting {
     bottom: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.6);
-    
+
 
 }
 
@@ -291,7 +301,7 @@ main .cardWrapper .card .icons .reyting {
     cursor: pointer;
 }
 
-.modal .form .box:last-child  button:first-child {
+.modal .form .box:last-child button:first-child {
     background-color: white;
     border: 1px solid #1e5eff;
     color: #1856f4;

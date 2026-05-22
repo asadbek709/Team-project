@@ -37,6 +37,10 @@ const address = document.querySelector(".address")
 
 const API = "https://6a0b382921e4456256978f49.mockapi.io/Contact"
 
+function editAndDeleteAction(box, id){
+console.log(box.getAttribute("name"), id);
+}
+
 function createCard(user) {
 
     const card = document.createElement("div")
@@ -55,14 +59,21 @@ function createCard(user) {
                 <p>${user.department}</p>
             </div>  
 
-            <img src="./assets/icons/Action.svg" alt="">
+            <div style="display: flex; align-items: center; gap: 7px;">
+                <div name="edit" onClick="editAndDeleteAction(this, ${user.id})" style="width: 20px; height: 20px; background-color: #daf9daff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <img src="./assets/icons/edit.svg" alt="">
+                </div>
+                <div name="delete" onClick="editAndDeleteAction(this, ${user.id})" style="width: 20px; height: 20px; background-color: #f4d1d1ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <img src="./assets/icons/trash-gray.svg" alt="">
+                </div>
+            </div>
         </div>
 
         <div class="address">
 
             <p>
                 <img src="./assets/icons/mail-forward.svg" alt="">
-                ${user.email.length > 25 ? user.email.slice(0, 26).padEnd(29, "...") : user.email}
+                ${user.email.length > 25 ? user.email.slice(0, 22).padEnd(25, "...") : user.email}
             </p>
 
             <p>
