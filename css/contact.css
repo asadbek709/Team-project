@@ -1,309 +1,304 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Archivo", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Archivo", sans-serif;
 }
 
 main {
-    background-color: #F8F9FA;
-    padding: 27px 24px;
-    overflow-y: scroll;
+  background-color: #f8f9fa;
+  padding: 27px 24px;
+  overflow-y: scroll;
 }
 
 main .titlewrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 main .titlewrapper h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #111827;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
 }
 
 main .titlewrapper button {
-    background: linear-gradient(90deg, #FF6F28, #FF6F28, #FF5325);
-    color: white;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 7px 16px;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 24px;
-    cursor: pointer;
+  background: linear-gradient(90deg, #ff6f28, #ff6f28, #ff5325);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
 }
 
 main .titlewrapper button:hover {
-    background: linear-gradient(90deg, #ff6214, #ff6214, #fb4d1d);
+  background: linear-gradient(90deg, #ff6214, #ff6214, #fb4d1d);
 }
 
 main .titlewrapper button img {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 main .contactControl {
-    margin: 24px 0 24px 0;
-    width: 100%;
-    padding: 15px 20px;
-    background: #fff;
-    border: 1px solid #E5E7EB;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin: 24px 0 24px 0;
+  width: 100%;
+  padding: 15px 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main .contactControl h5 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
 }
 
 main .contactControl select {
-    padding: 6px 8px;
-    color: #111827;
-    border: 1px solid #E5E7EB;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 400;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 6px 8px;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 main .cardWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-    gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 24px;
 }
 
 @media (max-width: 1500px) {
-    main .cardWrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-    }
+  main .cardWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 24px;
+  }
 }
 
 main .cardWrapper .card {
-    max-width: 270px;
-    min-width: 240px;
-    width: 100%;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #E5E7EB;
-    border-radius: 5px;
-    transition: all 0.3s;
+  max-width: 270px;
+  min-width: 240px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  transition: all 0.3s;
 }
 
 main .cardWrapper .card:hover {
-    cursor: pointer;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.09);
 }
 
 main .cardWrapper .card .avatar {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 main .cardWrapper .card .avatar .check {
-    cursor: pointer;
-    border-radius: 5px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 main .cardWrapper .card .avatar .user img {
-    border-radius: 50%;
-    width: 58px;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
 }
 
 main .cardWrapper .card .avatar img {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 main .cardWrapper .card .avatar .user {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 main .cardWrapper .card .avatar .user h5 {
-    margin-top: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
 }
 
 main .cardWrapper .card .avatar .user p {
-    margin-top: 5px;
-    font-size: 10px;
-    color: #FD3995;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    width: 80px;
-    height: 20px;
-    background-color: #FFEDF6;
+  margin-top: 5px;
+  font-size: 10px;
+  color: #fd3995;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 20px;
+  background-color: #ffedf6;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 
 main .cardWrapper .card .address {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 main .cardWrapper .card .address p {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 main .cardWrapper .card hr {
-    margin: 18px 0 16px 0;
-    border: 1px solid #E5E7EB;
+  margin: 18px 0 16px 0;
+  border: 1px solid #e5e7eb;
 }
 
 main .cardWrapper .card .icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main .cardWrapper .card .icons .imags {
-    display: flex;
-    gap: 8px;
-
+  display: flex;
+  gap: 8px;
 }
 
 main .cardWrapper .card .icons .imags img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 main .cardWrapper .card .icons .imags img:first-child {
-    padding: 4px;
-    background-color: #FAE7E7;
-    border-radius: 50%;
+  padding: 4px;
+  background-color: #fae7e7;
+  border-radius: 50%;
 }
 
 main .cardWrapper .card .icons .reyting {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-
-
 .modal {
-    display: none;
-    width: 430px;
-    border-radius: 12px;
-    background-color: white;
-    padding: 24px 28px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+  display: none;
+  width: 430px;
+  border-radius: 12px;
+  background-color: white;
+  padding: 24px 28px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 .blur {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-
-
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal .titleWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
 }
 
 .modal .titleWrapper p {
-    font-size: 20px;
-    font-weight: 300;
-
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .modal .titleWrapper img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modal .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
 }
 
 .modal .form .box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
 }
 
 .modal .form .box label {
-    font-size: 13px;
-    color: #151515;
-    font-weight: 400;
+  font-size: 13px;
+  color: #151515;
+  font-weight: 400;
 }
 
 .modal .form .box input,
 .modal .form .box select {
-    padding: 8px 16px;
-    border: 1px solid #d1d1d1;
-    border-radius: 5px;
-    font-size: 13px;
+  padding: 8px 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 .modal .form .box input::placeholder {
-    color: #7b7b7f;
-    font-weight: 200;
+  color: #7b7b7f;
+  font-weight: 200;
 }
 
 .modal .form .box:last-child {
-    flex-direction: row;
-    gap: 12px;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .modal .form .box:last-child button {
-    width: 100%;
-    background: blue;
-    padding: 8px 7px;
-    color: white;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 7px 16px;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 24px;
-    cursor: pointer;
+  width: 100%;
+  background: blue;
+  padding: 8px 7px;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
 }
 
 .modal .form .box:last-child button:first-child {
-    background-color: white;
-    border: 1px solid #1e5eff;
-    color: #1856f4;
-
+  background-color: white;
+  border: 1px solid #1e5eff;
+  color: #1856f4;
 }

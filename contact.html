@@ -1,139 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-    <link rel="stylesheet" href="./css/navbar.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./fonts/font.css">
-</head>
+    <link rel="stylesheet" href="./fonts/font.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="right">
-            <div class="inputBox">
-                <img src="./assets/icons/search (1).svg" alt="">
-                <input type="text" placeholder="Search in HRMS">
-            </div>
+      <div class="right">
+        <div class="inputBox">
+          <img src="./assets/icons/search (1).svg" alt="" />
+          <input type="text" placeholder="Search in HRMS" />
         </div>
-        <div class="left">
-            <div class="icons">
-                <img src="./assets/icons/Chat.svg" alt="">
-                <img src="./assets/icons/Inbox.svg" alt="">
-                <img src="./assets/icons/Notification.svg" alt="">
-                <img src="./assets/icons/Avatar With Dot Badges.svg" alt="">
-            </div>
+      </div>
+      <div class="left">
+        <div class="icons">
+          <img src="./assets/icons/Chat.svg" alt="" />
+          <img src="./assets/icons/Inbox.svg" alt="" />
+          <img src="./assets/icons/Notification.svg" alt="" />
+          <img src="./assets/icons/Avatar With Dot Badges.svg" alt="" />
         </div>
+      </div>
     </header>
+
     <nav>
-        <img src="./assets/icons/Logo (1).svg" alt="">
+      <img src="./assets/icons/Logo (1).svg" alt="" />
 
-        <div class="main_menu">
-            <p>MAIN MENU</p>
+      <div class="main_menu">
+        <p>MAIN MENU</p>
 
-            <ul>
-                <li>
-                    <a href="./dashboard.html">
-                        <img src="./assets/icons/dashboard (2).svg" alt="">
-                        <span>Dashboard</span>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="./contact.html">
-                        <img src="./assets/icons/contacts.svg" alt="">
-                        <span>Contacts</span>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="./super-admin.html">
-                        <img src="./assets/icons/superadmin.svg" alt="">
-                        <span>Super Admin</span>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <ul>
+          <li>
+            <a href="./dashboard.html">
+              <img src="./assets/icons/dashboard (2).svg" alt="" />
+              <span>Dashboard</span>
+              <img src="./assets/icons/chevron-down.svg" alt="" />
+            </a>
+          </li>
+          <li class="active">
+            <a href="./contact.html">
+              <img src="./assets/icons/contacts.svg" alt="" />
+              <span>Contacts</span>
+              <img src="./assets/icons/chevron-down.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="./super-admin.html">
+              <img src="./assets/icons/superadmin.svg" alt="" />
+              <span>Super Admin</span>
+              <img src="./assets/icons/chevron-down.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-        <div class="titlewrapper">
-            <h2>Contacts</h2>
-            <button id="add"><img src="./assets/icons/circle-plus.svg" alt="">Add New Contact</button>
-        </div>
+      <div class="titlewrapper">
+        <h2>Contacts</h2>
+        <button id="add">
+          <img src="./assets/icons/circle-plus.svg" alt="" />Add New Contact
+        </button>
+      </div>
 
-        <div class="contactControl">
-            <h5>Contact Grid</h5>
-            <select name="" id="">
-                <option value="">Sort By : Last 7 Days</option>
-            </select>
+      <div class="contactControl">
+        <h5>Contact Grid</h5>
+        <select name="" id="">
+          <option value="">Sort By : Last 7 Days</option>
+        </select>
+      </div>
 
-        </div>
-
-        <div class="cardWrapper"></div>
+      <div class="cardWrapper"></div>
     </main>
 
     <footer class="footer-1">
-        <div class="icons">
-            <img src="./assets/icons/Inbox (1).svg" alt="">
-            <img src="./assets/icons/Inbox (2).svg" alt="">
-            <img src="assets/icons/Applications.svg" alt="">
-        </div>
+      <div class="icons">
+        <img src="./assets/icons/Inbox (1).svg" alt="" />
+        <img src="./assets/icons/Inbox (2).svg" alt="" />
+        <img src="assets/icons/Applications.svg" alt="" />
+      </div>
     </footer>
 
     <footer class="footer-2">
-        <p>2026-2030 &copy; SmartHR.</p>
-        <p>Designed & Developed By <span>Dreams</span></p>
+      <p>2026-2030 &copy; SmartHR.</p>
+      <p>Designed & Developed By <span>Dreams</span></p>
     </footer>
 
     <div class="modal">
-        <div class="titleWrapper">
-            <p>Create a contact</p>
+      <div class="titleWrapper">
+        <p>Create a contact</p>
+      </div>
+
+      <div class="form">
+        <div class="box">
+          <label>Full name</label>
+          <input class="fUllName" type="text" placeholder="Ali Valiyev" />
         </div>
 
-        <div class="form">
-            <div class="box">
-                <label>Full name</label>
-                <input class="fUllName" type="text" placeholder="Ali Valiyev">
-            </div>
-
-            <div class="box">
-                <label>Department</label>
-                <input class="Department" type="text" placeholder="Senior  Manager">
-            </div>
-
-            <div class="box">
-                <label>Phone number</label>
-                <input class="phoneNumber" type="number" placeholder="997770707">
-            </div>
-            <div class="box">
-                <label>Email</label>
-                <input class="email" type="email" placeholder="darlee@example.com">
-            </div>
-            <div class="box">
-                <label>Address</label>
-                <input class="address" type="text" placeholder="Germany">
-            </div>
-
-            <div class="box">
-                <label>Image</label>
-                <input class="imageInput" type="file" placeholder="enter your image">
-            </div>
-
-
-            <div class="box">
-                <button id="close">CLose</button>
-                <button id="submit">Submit</button>
-            </div>
+        <div class="box">
+          <label>Department</label>
+          <input class="Department" type="text" placeholder="Senior  Manager" />
         </div>
+
+        <div class="box">
+          <label>Phone number</label>
+          <input class="phoneNumber" type="number" placeholder="997770707" />
+        </div>
+        <div class="box">
+          <label>Email</label>
+          <input class="email" type="email" placeholder="darlee@example.com" />
+        </div>
+        <div class="box">
+          <label>Address</label>
+          <input class="address" type="text" placeholder="Germany" />
+        </div>
+
+        <div class="box">
+          <label>Image</label>
+          <input
+            class="imageInput"
+            type="file"
+            placeholder="enter your image"
+          />
+        </div>
+
+        <div class="box">
+          <button id="close">CLose</button>
+          <button id="submit">Submit</button>
+        </div>
+      </div>
     </div>
 
     <div class="blur"></div>
 
     <script src="./js/contact.js"></script>
-</body>
-
+  </body>
 </html>

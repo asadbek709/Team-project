@@ -1,97 +1,86 @@
-const add = document.querySelector("#add")
-const modal = document.querySelector(".modal")
-const blur = document.querySelector(".blur")
-const Close = document.querySelector("#close")
+const add = document.querySelector("#add");
+const modal = document.querySelector(".modal");
+const blur = document.querySelector(".blur");
+const Close = document.querySelector("#close");
 
-const submit = document.querySelector("#submit")
-const cardWrapper = document.querySelector(".cardWrapper")
+const submit = document.querySelector("#submit");
+const cardWrapper = document.querySelector(".cardWrapper");
 
-const fullName = document.querySelector(".fUllName")
-const department = document.querySelector(".Department")
-const phoneNumber = document.querySelector(".phoneNumber")
-const email = document.querySelector(".email")
-const imageInput = document.querySelector(".imageInput")
-const address = document.querySelector(".address")
+const fullName = document.querySelector(".fUllName");
+const department = document.querySelector(".Department");
+const phoneNumber = document.querySelector(".phoneNumber");
+const email = document.querySelector(".email");
+const imageInput = document.querySelector(".imageInput");
+const address = document.querySelector(".address");
 
-const API = "https://6a0b382921e4456256978f49.mockapi.io/Contact"
+const api = "https://6a0b382921e4456256978f49.mockapi.io/Contact";
 
+// let cardID = new URLSearchParams(window.location.href);
+// console.log(cardID?.get("id"), "new URLSearchParams chiqdi");
 
 function closeAction() {
+  modal.style.display = "none";
+  blur.style.display = "none";
 
-    modal.style.display = "none"
-    blur.style.display = "none"
+  fullName.value = "";
+  department.value = "";
+  phoneNumber.value = "";
+  email.value = "";
+  imageInput.value = "";
+  address.value = "";
 
-    fullName.value = ""
-    department.value = ""
-    phoneNumber.value = ""
-    email.value = ""
-    imageInput.value = ""
-    address.value = ""
-
-    submit.textContent = "Submit"
-    submit.removeAttribute("edit_id")
+  submit.textContent = "Submit";
+  submit.removeAttribute("edit_id");
 }
 
-Close.addEventListener("click", closeAction)
-
+Close.addEventListener("click", closeAction);
 
 add.addEventListener("click", function () {
-    modal.style.display = "block"
-    blur.style.display = "block"
-    submit.textContent = "Submit"
-    submit.removeAttribute("edit_id")
-})
+  modal.style.display = "block";
+  blur.style.display = "block";
+  submit.textContent = "Submit";
+  submit.removeAttribute("edit_id");
+});
 
+function editAndDeleteAction(box, id) {
+  const action = box.getAttribute("name");
 
-function editAndDeleteAction(box, id){
+  if (action === "delete") {
+    const isDelete = confirm("Haqiqatan ham ochirmoqchimisiz?");
 
-    const action = box.getAttribute("name")
-
-    if(action === "delete"){
-
-        const isDelete = confirm("Haqiqatan ham ochirmoqchimisiz?")
-
-        if(isDelete){
-
-            fetch(`${API}/${id}`, {
-                method: "DELETE"
-            })
-            .then(() => {
-                getContacts()
-            })
-        }
+    if (isDelete) {
+      fetch(`${api}/${id}`, {
+        method: "DELETE",
+      }).then(() => {
+        getContacts();
+      });
     }
+  } else if (action === "edit") {
+    fetch(`${api}/${id}`)
+      .then((res) => res.json())
+      .then((user) => {
+        modal.style.display = "block";
+        blur.style.display = "block";
 
-    else if(action === "edit"){
+        fullName.value = user.full_name;
+        department.value = user.department;
+        phoneNumber.value = user.phone;
+        email.value = user.email;
+        address.value = user.address;
 
-        fetch(`${API}/${id}`)
-        .then(res => res.json())
-        .then(user => {
+        submit.textContent = "Update";
 
-            modal.style.display = "block"
-            blur.style.display = "block"
-
-            fullName.value = user.full_name
-            department.value = user.department
-            phoneNumber.value = user.phone
-            email.value = user.email
-            address.value = user.address
-
-            submit.textContent = "Update"
-
-            submit.setAttribute("edit_id", id)
-        })
-    }
+        submit.setAttribute("edit_id", id);
+      });
+  }
 }
 
-
 function createCard(user) {
+  const card = document.createElement("div");
 
-    const card = document.createElement("div")
+  card.classList.add("card");
 
-    card.classList.add("card")
-
-    card.innerHTML = `
+  card.innerHTML = `
     
         <div class="avatar">
 
@@ -105,7 +94,7 @@ function createCard(user) {
 
             <div style="display: flex; align-items: center; gap: 7px;">
 
-                <div 
+                <div
                     name="edit" 
                     onClick="editAndDeleteAction(this, ${user.id})"
                     style="
@@ -146,9 +135,11 @@ function createCard(user) {
 
             <p>
                 <img src="./assets/icons/mail-forward.svg" alt="">
-                ${user.email.length > 25
+                ${
+                  user.email.length > 25
                     ? user.email.slice(0, 22).padEnd(25, "...")
-                    : user.email}
+                    : user.email
+                }
             </p>
 
             <p>
@@ -180,125 +171,113 @@ function createCard(user) {
             </div>
 
         </div>
-    `
+    `;
 
-    cardWrapper.appendChild(card)
+  // Card Clicked
+  // card.addEventListener("click", function () {
+  //   if (user.id) window.location.href = `${window.location.href}/id=${user.id}`;
+  // });
+
+  cardWrapper.appendChild(card);
 }
-
-
 
 function getContacts() {
-
-    fetch(API)
-        .then(res => res.json())
-        .then(data => {
-
-            cardWrapper.innerHTML = ""
-
-            data.forEach(user => {
-                createCard(user)
-            })
-        })
+  fetch(api)
+    .then((res) => res.json())
+    .then((data) => {
+      cardWrapper.innerHTML = "";
+      data.forEach((user) => {
+        createCard(user);
+      });
+    });
 }
 
-getContacts()
+getContacts();
 
 submit.addEventListener("click", function () {
+  const editId = submit.getAttribute("edit_id");
 
-    const editId = submit.getAttribute("edit_id")
+  const file = imageInput.files[0];
 
-    const file = imageInput.files[0]
+  if (editId && !file) {
+    fetch(`${api}/${editId}`)
+      .then((res) => res.json())
+      .then((oldUser) => {
+        const updatedUser = {
+          full_name: fullName.value,
+          department: department.value,
+          phone: phoneNumber.value,
+          email: email.value,
+          image: oldUser.image,
+          address: address.value,
+        };
 
-    if(editId && !file){
-
-        fetch(`${API}/${editId}`)
-        .then(res => res.json())
-        .then(oldUser => {
-
-            const updatedUser = {
-                full_name: fullName.value,
-                department: department.value,
-                phone: phoneNumber.value,
-                email: email.value,
-                image: oldUser.image,
-                address: address.value
-            }
-
-            fetch(`${API}/${editId}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(updatedUser)
-            })
-            .then(res => res.json())
-            .then(() => {
-
-                getContacts()
-
-                closeAction()
-            })
+        fetch(`${api}/${editId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedUser),
         })
+          .then((res) => res.json())
+          .then(() => {
+            getContacts();
 
-        return
+            closeAction();
+          });
+      });
+
+    return;
+  }
+
+  const reader = new FileReader();
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+
+  reader.onload = function () {
+    const userData = {
+      full_name: fullName.value,
+      department: department.value,
+      phone: phoneNumber.value,
+      email: email.value,
+      image: reader.result,
+      address: address.value,
+    };
+
+    if (editId) {
+      fetch(`${api}/${editId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      })
+        .then((res) => res.json())
+        .then(() => {
+          getContacts();
+
+          closeAction();
+        });
+    } else {
+      fetch(api, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          createCard(data);
+
+          closeAction();
+        });
     }
+  };
 
-    const reader = new FileReader()
-
-    if(file){
-        reader.readAsDataURL(file)
-    }
-
-    reader.onload = function () {
-
-        const userData = {
-            full_name: fullName.value,
-            department: department.value,
-            phone: phoneNumber.value,
-            email: email.value,
-            image: reader.result,
-            address: address.value
-        }
-
-        if(editId){
-
-            fetch(`${API}/${editId}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(userData)
-            })
-            .then(res => res.json())
-            .then(() => {
-
-                getContacts()
-
-                closeAction()
-            })
-        }
-
-        else{
-
-            fetch(API, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(userData)
-            })
-            .then(res => res.json())
-            .then(data => {
-
-                createCard(data)
-
-                closeAction()
-            })
-        }
-    }
-
-    if(!file && !editId){
-
-        alert("Iltimos rasm tanlang!")
-    }
-})
+  if (!file && !editId) {
+    alert("Iltimos rasm tanlang!");
+  }
+});
