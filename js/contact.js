@@ -36,10 +36,8 @@ Close.addEventListener("click", closeAction)
 
 
 add.addEventListener("click", function () {
-
     modal.style.display = "block"
     blur.style.display = "block"
-
     submit.textContent = "Submit"
     submit.removeAttribute("edit_id")
 })
