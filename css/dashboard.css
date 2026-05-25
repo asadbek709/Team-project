@@ -15,7 +15,6 @@ main {
   overflow-y: auto;
 }
 
-
 .dashboard-top {
   display: flex;
   align-items: center;
@@ -38,9 +37,8 @@ main {
 
 .calendar span {
   font-size: 13px;
-  color: #6B7280;
+  color: #6b7280;
 }
-
 
 .wrapper {
   display: grid;
@@ -48,7 +46,6 @@ main {
   grid-template-rows: auto auto;
   gap: 16px;
 }
-
 
 .wrapper .ten {
   grid-column: 5/6;
@@ -72,18 +69,16 @@ main {
   height: 135px;
 }
 
-
 .wrapper .box img,
 .wrapper .box2 img {
   width: 30px;
   height: 30px;
 }
 
-
 .wrapper p {
   font-size: 12px;
   font-weight: 500;
-  color: #6B7280;
+  color: #6b7280;
   line-height: 16px;
 }
 
@@ -105,12 +100,11 @@ main {
 .wrapper .box2 .number2 span {
   font-size: 11px;
   font-weight: 500;
-  color: #03C95A;
+  color: #03c95a;
 }
 
-
 .minus {
-  color: #EF4444 !important;
+  color: #ef4444 !important;
 }
 
 .wrapper a {
@@ -121,9 +115,8 @@ main {
   margin-top: 2px;
 }
 
-
 .wrapper .box .view {
-  color: #F26522;
+  color: #f26522;
 }
 
 .dashboard-top .calendar span {
