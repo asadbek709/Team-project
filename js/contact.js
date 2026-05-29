@@ -188,6 +188,7 @@ function getContacts() {
       let cardID = cardParam.get("id");
 
       if (cardID) {
+        let obj = data.find((obj)=>obj.id == cardID)
         let main = document.querySelector("#main");
         main.innerHTML = `
             <div class="wrapper">
@@ -219,7 +220,7 @@ function getContacts() {
                     />
 
                     <h2>
-                      Darlee Robertson
+                      ${obj.full_name}
                       <img src="./assets/icons/discount-check-filled.svg" alt="" />
                     </h2>
 
@@ -240,7 +241,7 @@ function getContacts() {
                       <img src="./assets/icons/phone (1).svg" alt="" />
                       Phone
                     </span>
-                    <span>(163) 2459 315</span>
+                    <span>${obj.phone}</span>
                   </div>
 
                   <div class="info_item">
@@ -248,7 +249,7 @@ function getContacts() {
                       <img src="./assets/icons/mail-check.svg" alt="" />
                       Email
                     </span>
-                    <a href="">darlee@example.com</a>
+                    <a href="">${obj.email}</a>
                   </div>
 
                   <div class="info_item">
@@ -273,8 +274,7 @@ function getContacts() {
                       Address
                     </span>
                     <span>
-                      1861 Bayonne Ave,<br />
-                      Manchester, NJ, 08759
+                     ${obj.address}
                     </span>
                   </div>
                 </div>
