@@ -6,12 +6,17 @@ const Close = document.querySelector("#close");
 const submit = document.querySelector("#submit");
 const cardWrapper = document.querySelector(".cardWrapper");
 
-const fullName = document.querySelector(".fUllName");
-const department = document.querySelector(".Department");
+const fullName = document.querySelector(".fullName");
+const department = document.querySelector(".department");
 const phoneNumber = document.querySelector(".phoneNumber");
 const email = document.querySelector(".email");
 const imageInput = document.querySelector(".imageInput");
 const address = document.querySelector(".address");
+const brithday = document.querySelector(".brithday");
+const gender = document.querySelector(".gender");
+const language = document.querySelector(".language");
+const currency = document.querySelector(".currency");
+
 
 const api = "https://6a0b382921e4456256978f49.mockapi.io/Contact";
 
@@ -25,8 +30,12 @@ function closeAction() {
   email.value = "";
   imageInput.value = "";
   address.value = "";
+  currency.value = "";
+  language.value = "";
+  gender.value = "";
+  brithday.value = "",
 
-  submit.textContent = "Submit";
+    submit.textContent = "Submit";
   submit.removeAttribute("edit_id");
 }
 
@@ -62,6 +71,10 @@ function editAndDeleteAction(e, id) {
         phoneNumber.value = user.phone;
         email.value = user.email;
         address.value = user.address;
+        brithday.value = user.brithday;
+        gender.value = user.gender;
+        language.value = user.language
+        currency.value = user.currency
         submit.textContent = "Update";
         submit.setAttribute("edit_id", id);
       });
@@ -73,8 +86,8 @@ function createCard(user) {
 
   card.classList.add("card");
 
+  
   card.innerHTML = `
-    
         <div class="avatar">
 
             <input class="check" type="checkbox">
@@ -128,11 +141,10 @@ function createCard(user) {
 
             <p>
                 <img src="./assets/icons/mail-forward.svg" alt="">
-                ${
-                  user.email.length > 25
-                    ? user.email.slice(0, 22).padEnd(25, "...")
-                    : user.email
-                }
+                ${user.email.length > 25
+      ? user.email.slice(0, 22).padEnd(25, "...")
+      : user.email
+    }
             </p>
 
             <p>
@@ -188,7 +200,7 @@ function getContacts() {
       let cardID = cardParam.get("id");
 
       if (cardID) {
-        let obj = data.find((obj)=>obj.id == cardID)
+        let obj = data.find((obj) => obj.id == cardID)
         let main = document.querySelector("#main");
         main.innerHTML = `
             <div class="wrapper">
@@ -213,9 +225,9 @@ function getContacts() {
                   <div class="cover"></div>
 
                   <div class="user_info">
-                    <img
+                    <img    
                       class="avatar"
-                      src="./assets/icons/Avatar With Dot Badges.svg"
+                      src="${obj.image}"
                       alt=""
                     />
 
@@ -226,7 +238,7 @@ function getContacts() {
 
                     <p>BrightWave Innovations</p>
 
-                    <span class="job_badge">Facility Manager</span>
+                    <span class="job_badge">sdgsfs</span>
                   </div>
                 </div>
 
@@ -241,7 +253,7 @@ function getContacts() {
                       <img src="./assets/icons/phone (1).svg" alt="" />
                       Phone
                     </span>
-                    <span>${obj.phone}</span>
+                    <span>+${obj.phone}</span>
                   </div>
 
                   <div class="info_item">
@@ -257,7 +269,7 @@ function getContacts() {
                       <img src="./assets/icons/gender-male.svg" alt="" />
                       Gender
                     </span>
-                    <span>Male</span>
+                    <span>${obj.gender}</span>
                   </div>
 
                   <div class="info_item">
@@ -265,7 +277,7 @@ function getContacts() {
                       <img src="./assets/icons/cake.svg" alt="" />
                       Birthday
                     </span>
-                    <span>24th July 2000</span>
+                    <span>${obj.brithday}</span>
                   </div>
 
                   <div class="info_item">
@@ -290,7 +302,7 @@ function getContacts() {
                       <img src="./assets/icons/e-passport.svg" alt="" />
                       Language
                     </span>
-                    <span>English</span>
+                    <span>${obj.language}</span>
                   </div>
 
                   <div class="info_item">
@@ -298,7 +310,7 @@ function getContacts() {
                       <img src="./assets/icons/calendar-x.svg" alt="" />
                       Currency
                     </span>
-                    <span>United States dollar</span>
+                    <span>${obj.currency}</span>
                   </div>
 
                   <div class="info_item">
@@ -518,15 +530,14 @@ function getContacts() {
                 text-align: center;
                 padding: 0 20px 20px;
                 margin-top: -42px;
-              }
-
-              .avatar {
-                width: 84px;
-                height: 84px;
-
-                border-radius: 50%;
-
-                border: 4px solid white;
+                }
+                
+                .avatar {
+                  width: 84px;
+                  height: 84px;
+                  border-radius: 50%;
+                  border: 4px solid white;
+                  background-color: #fff;
               }
 
               .user_info h2 {
@@ -784,8 +795,12 @@ submit.addEventListener("click", function () {
           department: department.value,
           phone: phoneNumber.value,
           email: email.value,
-          image: oldUser.image,
+          image: reader.result,
           address: address.value,
+          brithday: brithday.value,
+          gender: gender.value,
+          language: language.value,
+          currency: currency.value,
         };
 
         fetch(`${api}/${editId}`, {
@@ -820,6 +835,10 @@ submit.addEventListener("click", function () {
       email: email.value,
       image: reader.result,
       address: address.value,
+      brithday: brithday.value,
+      gender: gender.value,
+      language: language.value,
+      currency: currency.value,
     };
 
     if (editId) {
