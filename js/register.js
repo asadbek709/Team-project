@@ -38,18 +38,18 @@ arr.forEach((box) => {
         let asadbek = arr.every((word) => word.length >= 3);
 
         if (asadbek) {
-          inp.style.border = "2px solid #238636 ";
+          inp.style.border = "1px solid #238636 ";
         } else {
-          inp.style.border = "2px solid #da3633";
+          inp.style.border = "1px solid #da3633";
         }
       } else {
-        inp.style.border = "2px solid #da3633";
+        inp.style.border = "1px solid #da3633";
       }
     } else if (attr === "username") {
       if (inp.value.trim().length >= 3) {
-        inp.style.border = "2px solid #238636 ";
+        inp.style.border = "1px solid #238636 ";
       } else {
-        inp.style.border = "2px solid #da3633";
+        inp.style.border = "1px solid #da3633";
       }
     } else if (attr === "email") {
       let value = inp.value.trim();
@@ -68,9 +68,9 @@ arr.forEach((box) => {
         isNumber &&
         !isUpper
       ) {
-        inp.style.border = "2px solid #238636 ";
+        inp.style.border = "1px solid #238636 ";
       } else {
-        inp.style.border = "2px solid #da3633";
+        inp.style.border = "1px solid #da3633";
       }
     } else if (attr === "password") {
       let value = inp.value.trim();
@@ -98,16 +98,16 @@ arr.forEach((box) => {
 
 
       if (isNumber && isUpper && isLong && isSymbol) {
-        inp.style.border = "2px solid #238636 ";
+        inp.style.border = "1px solid #238636 ";
       } else {
-        inp.style.border = "2px solid #da3633";
+        inp.style.border = "1px solid #da3633";
       }
     } else alert("Siz notog'ri Event ishlatyapsiz. 😂");
   });
 
   inp.addEventListener("blur", function () {
     if (!inp.value.trim()) {
-      inp.style.border = "2px solid #da3633";
+      inp.style.border = "1px solid #da3633";
     }
   });
 });
