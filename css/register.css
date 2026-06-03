@@ -187,7 +187,7 @@ body {
 
 input:focus {
   outline: none;
-  border: 2px solid #ff8a4c;
+  border: 1px solid #ff8a4c;
   box-shadow: 0 0 2px rgba(255, 138, 76, 0.5);
 }
 
