@@ -103,6 +103,9 @@ const clearInp = (arr) => {
   arr.forEach((box) => {
     let inp = box.children[1];
     inp.value = "";
+    inp.style.cssText = `
+      border: 1px solid #da3633 ;
+    `;
   });
 };
 
@@ -112,7 +115,7 @@ btn.addEventListener("click", function (e) {
   let allInpValue = {};
   arr.forEach((box) => {
     let inp = box.children[1];
-    isGreen.push(inp.getAttribute("style")?.includes("rgb(31, 136, 61)"));
+    isGreen.push(inp.getAttribute("style")?.includes("rgb(35, 134, 54)"));
     allInpValue[inp.name] = inp.value;
   });
   let isTruesy = isGreen.every((value) => value);

@@ -3,7 +3,6 @@ let eye = document.querySelector("#eye");
 let password = document.querySelector(".password");
 
 eyeslash.addEventListener("click", function () {
-  console.log(eyeslash);
   password.type = "text";
   eyeslash.style.cssText = `
     visibility: hidden;
@@ -14,7 +13,6 @@ eyeslash.addEventListener("click", function () {
 });
 
 eye.addEventListener("click", function () {
-  console.log(eye);
   password.type = "password";
 
   eye.style.cssText = `
@@ -96,7 +94,6 @@ arr.forEach((box) => {
         );
       });
 
-
       if (isNumber && isUpper && isLong && isSymbol) {
         inp.style.border = "1px solid #238636 ";
       } else {
@@ -112,6 +109,16 @@ arr.forEach((box) => {
   });
 });
 
+const clearInp = (arr) => {
+  arr.forEach((box) => {
+    let inp = box.children[1];
+    inp.value = "";
+    inp.style.cssText = `
+      border: 1px solid #da3633 ;
+    `;
+  });
+};
+
 const btn = document.querySelector(".sign_btn");
 
 btn.addEventListener("click", function (e) {
@@ -121,9 +128,11 @@ btn.addEventListener("click", function (e) {
   arr.forEach((box) => {
     let inp = box.children[1];
     let styleAttr = inp.getAttribute("style");
-    isError.push(styleAttr?.includes("rgb(31, 136, 61)"));
+    isError.push(styleAttr?.includes("rgb(35, 134, 54)"));
     allInpData[inp.getAttribute("class")] = inp.value;
   });
+  console.log(allInpData);
+
   let isTruesy = isError.every((value) => value);
   if (isTruesy) {
     fetch("https://692ad7077615a15ff24dd6b2.mockapi.io/api/v1/register", {
@@ -141,6 +150,7 @@ btn.addEventListener("click", function (e) {
       )
       .catch((err) => alert(err.message));
   } else {
+    clearInp(arr);
     alert("Error");
   }
 });
