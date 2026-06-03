@@ -32,7 +32,8 @@ function closeAction() {
   currency.value = "";
   language.value = "";
   gender.value = "";
-  (brithday.value = ""), (submit.textContent = "Submit");
+  brithday.value = "";
+  submit.textContent = "Submit";
   submit.removeAttribute("edit_id");
 }
 
@@ -258,9 +259,10 @@ function getContacts() {
                       <img src="./assets/icons/mail-check.svg" alt="" />
                       Email
                     </span>
-                    <a href="">${obj?.email.length > 20
-                      ? obj?.email.slice(0, 18).padEnd(20, "...")
-                      : obj?.email
+                    <a href="">${
+                      obj?.email.length > 20
+                        ? obj?.email.slice(0, 18).padEnd(20, "...")
+                        : obj?.email
                     }</a>
                     </div>
 
@@ -861,7 +863,7 @@ submit.addEventListener("click", function () {
       gender: gender.value,
       language: language.value,
       currency: currency.value,
-      last_modified: new Date().toLocaleString().replaceAll(".", "/")
+      last_modified: new Date().toLocaleString().replaceAll(".", "/"),
     };
 
     if (editId) {
