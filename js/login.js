@@ -9,8 +9,8 @@ arr.forEach((box) => {
       checked(inp);
     } else {
       inp.style.cssText = `
-                border: 1px solid #cf222e;
-             `;
+        border: 1px solid #da3633 ;
+      `;
     }
   });
 
@@ -31,12 +31,12 @@ function checked(inp) {
       .every((s) => s === s.toLowerCase());
     if (isLower && len && val.length >= 3) {
       inp.style.cssText = `
-                    border: 2px solid #1f883d;
-                `;
+          border: 1px solid #238636;
+      `;
     } else {
       inp.style.cssText = `
-                    border: 2px solid #cf222e;
-                `;
+          border: 1px solid #da3633 ;
+      `;
     }
   } else if (type === "password") {
     let arr = inp.value.split("");
@@ -60,15 +60,15 @@ function checked(inp) {
       isSymbol
     ) {
       inp.style.cssText = `
-                    border: 2px solid #1f883d;
-                `;
+          border: 1px solid #238636;
+      `;
     } else {
       inp.style.cssText = `
-                    border: 2px solid #cf222e;
-                `;
+          border: 1px solid #da3633 ;
+      `;
     }
   } else {
-    alert("Siz not'g'ri Event ishlatyapsiz. 😂");
+    alert("Siz not'g'ri Event ishlatyapsiz. ❗");
   }
 }
 
