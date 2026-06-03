@@ -225,6 +225,7 @@ input:focus {
   font-size: 14px;
   margin-left: 50px;
   color: #111827;
+  cursor: pointer;
 }
 
 .chekdiv a {
