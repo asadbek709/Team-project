@@ -17,7 +17,6 @@ const gender = document.querySelector(".gender");
 const language = document.querySelector(".language");
 const currency = document.querySelector(".currency");
 
-
 const api = "https://6a0b382921e4456256978f49.mockapi.io/Contact";
 
 function closeAction() {
@@ -33,9 +32,7 @@ function closeAction() {
   currency.value = "";
   language.value = "";
   gender.value = "";
-  brithday.value = "",
-
-    submit.textContent = "Submit";
+  (brithday.value = ""), (submit.textContent = "Submit");
   submit.removeAttribute("edit_id");
 }
 
@@ -73,8 +70,8 @@ function editAndDeleteAction(e, id) {
         address.value = user.address;
         brithday.value = user.brithday;
         gender.value = user.gender;
-        language.value = user.language
-        currency.value = user.currency
+        language.value = user.language;
+        currency.value = user.currency;
         submit.textContent = "Update";
         submit.setAttribute("edit_id", id);
       });
@@ -86,7 +83,6 @@ function createCard(user) {
 
   card.classList.add("card");
 
-  
   card.innerHTML = `
         <div class="avatar">
 
@@ -141,10 +137,11 @@ function createCard(user) {
 
             <p>
                 <img src="./assets/icons/mail-forward.svg" alt="">
-                ${user.email.length > 25
-      ? user.email.slice(0, 22).padEnd(25, "...")
-      : user.email
-    }
+                ${
+                  user.email.length > 25
+                    ? user.email.slice(0, 22).padEnd(25, "...")
+                    : user.email
+                }
             </p>
 
             <p>
@@ -200,7 +197,7 @@ function getContacts() {
       let cardID = cardParam.get("id");
 
       if (cardID) {
-        let obj = data.find((obj) => obj.id == cardID)
+        let obj = data.find((obj) => obj.id == cardID);
         let main = document.querySelector("#main");
         main.innerHTML = `
             <div class="wrapper">
@@ -227,18 +224,18 @@ function getContacts() {
                   <div class="user_info">
                     <img    
                       class="avatar"
-                      src="${obj.image}"
+                      src="${obj?.image}"
                       alt=""
                     />
 
                     <h2>
-                      ${obj.full_name}
+                      ${obj?.full_name}
                       <img src="./assets/icons/discount-check-filled.svg" alt="" />
                     </h2>
 
                     <p>BrightWave Innovations</p>
 
-                    <span class="job_badge">sdgsfs</span>
+                    <span class= "job_badge">${obj?.department}</span>
                   </div>
                 </div>
 
@@ -253,7 +250,7 @@ function getContacts() {
                       <img src="./assets/icons/phone (1).svg" alt="" />
                       Phone
                     </span>
-                    <span>+${obj.phone}</span>
+                    <span>+${obj?.phone}</span>
                   </div>
 
                   <div class="info_item">
@@ -261,15 +258,18 @@ function getContacts() {
                       <img src="./assets/icons/mail-check.svg" alt="" />
                       Email
                     </span>
-                    <a href="">${obj.email}</a>
-                  </div>
+                    <a href="">${obj?.email.length > 20
+                      ? obj?.email.slice(0, 18).padEnd(20, "...")
+                      : obj?.email
+                    }</a>
+                    </div>
 
                   <div class="info_item">
                     <span class="icons">
                       <img src="./assets/icons/gender-male.svg" alt="" />
                       Gender
                     </span>
-                    <span>${obj.gender}</span>
+                    <span>${obj?.gender}</span>
                   </div>
 
                   <div class="info_item">
@@ -277,7 +277,7 @@ function getContacts() {
                       <img src="./assets/icons/cake.svg" alt="" />
                       Birthday
                     </span>
-                    <span>${obj.brithday}</span>
+                    <span>${obj?.brithday}</span>
                   </div>
 
                   <div class="info_item">
@@ -286,7 +286,7 @@ function getContacts() {
                       Address
                     </span>
                     <span>
-                     ${obj.address}
+                     ${obj?.address}
                     </span>
                   </div>
                 </div>
@@ -302,7 +302,7 @@ function getContacts() {
                       <img src="./assets/icons/e-passport.svg" alt="" />
                       Language
                     </span>
-                    <span>${obj.language}</span>
+                    <span>${obj?.language}</span>
                   </div>
 
                   <div class="info_item">
@@ -310,7 +310,7 @@ function getContacts() {
                       <img src="./assets/icons/calendar-x.svg" alt="" />
                       Currency
                     </span>
-                    <span>${obj.currency}</span>
+                    <span>${obj?.currency}</span>
                   </div>
 
                   <div class="info_item">
@@ -318,7 +318,7 @@ function getContacts() {
                       <img src="./assets/icons/globe.svg" alt="" />
                       Last Modified
                     </span>
-                    <span>27/09/24, 11:45 pm</span>
+                    <span>${obj?.last_modified}</span>
                   </div>
 
                   <div class="info_item">
@@ -380,8 +380,11 @@ function getContacts() {
                 <div class="activity_wrapper">
                   <div class="span">
                     <span
-                      ><img src="./assets/icons/calendar.svg" alt="" /> 15 Feb
-                      2024</span
+                      >${new Date()
+                        .toDateString()
+                        .split(" ")
+                        .slice(1)
+                        .join(" ")}</span
                     >
                   </div>
 
@@ -427,20 +430,21 @@ function getContacts() {
                   </div>
 
                   <div class="span">
-                    <span>
-                      <img src="./assets/icons/calendar.svg" alt="" />15 Feb
-                      2024</span
-                    >
+                    <span> ${new Date()
+                      .toDateString()
+                      .split(" ")
+                      .slice(1)
+                      .join(" ")}</span>
                   </div>
 
                   <div class="activity_card">
-                    <div class="circle blue">
+                    <div class="circle blueviolet">
                       <img src="./assets/icons/user-circle.svg" alt="" />
                     </div>
 
                     <div class="wrap">
-                      <h4>You sent 1 Message to the contact.</h4>
-                      <p>10:25 pm</p>
+                      <h4>Meeting With Abraham</h4>
+                      <p>Schedueled  on 05:00 pm</p>
                     </div>
                   </div>
 
@@ -451,8 +455,7 @@ function getContacts() {
 
                     <div class="wrap">
                       <h4>
-                        Denwar responded to your appointment schedule question by call
-                        at 09:30pm.
+                        Drain responded to your appointment schedule question.
                       </h4>
                       <p>09:25 pm</p>
                     </div>
@@ -699,7 +702,11 @@ function getContacts() {
                 border: 1px solid #eee;
                 border-radius: 12px;
                 padding: 16px;
+                font-style: medium;
+                font-size: 14px;
                 font-weight: 500;
+                letter-spacing: 0%;
+                line-height: 24px;
                 display: grid;
                 grid-template-columns: 40px 1fr;
                 align-items: center;
@@ -707,10 +714,26 @@ function getContacts() {
                 gap: 14px;
               }
 
+              .wrap > p {
+                color: rgba(107, 114, 128, 1);
+                font-weight: 400;
+                font-size: 14px;
+                letter-spacing: 0%;
+                line-height: 24px;
+
+              }
+
               .circle {
                 height: 40px;
                 width: 40px;
                 border-radius: 50%;
+              }
+
+              .blueviolet {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #ab47bc;
               }
 
               .blue {
@@ -734,11 +757,11 @@ function getContacts() {
                 background: #ffc400;
               }
 
-              .blue {
+              .purple {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: #25b7ff;
+                background: rgba(171, 71, 188, 1)
               }
 
               .green {
@@ -770,7 +793,6 @@ function getContacts() {
               }
             </style>
         `;
-        console.log(cardID);
       } else {
         data.forEach((user) => {
           createCard(user);
@@ -839,6 +861,7 @@ submit.addEventListener("click", function () {
       gender: gender.value,
       language: language.value,
       currency: currency.value,
+      last_modified: new Date().toLocaleString().replaceAll(".", "/")
     };
 
     if (editId) {
